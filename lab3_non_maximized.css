@@ -1,0 +1,30 @@
+/*Selector Universal*/
+*  {
+    background-color: black;
+}
+/*Selector genérico*/
+.info{
+    font-family: cursive;
+    font-size: 130%; 
+}
+/*Slector etiqueta*/
+body{
+    color:white;
+    margin: 0 auto;
+    max-width: 50em;
+}
+
+/*Selector clase*/
+.brown{
+    color:brown;
+}
+/*Selector ID*/
+#amor{
+    color:red;
+}
+/*Selector pseudo clase*/
+a:hover {
+    font-size: 120%;
+    color: blueviolet;
+}
+
