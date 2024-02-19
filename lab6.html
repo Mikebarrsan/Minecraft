@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab6</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+
+  <body>
+   <section class="hero is-info">
+      <div class="hero-body">
+        <p class="title">
+          ¡Valida tu password!
+        </p>
+        <p class="subtitle">
+          Por Mike Barrón
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input id="password" class="input" type="password" placeholder="Password">
+          <!-- <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span> -->
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input id="verified_password" class="input" type="password" placeholder="Verify password">
+          <!-- <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span> --> 
+        </p>
+      </div>
+      <div>
+        <button id = "Verify_password" class="button is-info is-outlined">Verify</button>
+      </div>
+      <br>
+    </section>
+  </body>
+  <footer class="footer">
+   <div class="content has-text-centered">
+     <p>
+       Editor implementado: 
+       <a href="https://code.visualstudio.com">Visual Studio Code</a>.
+     </p>
+   </div>
+ </footer>
+ <script src="lab6.js" ></script>
+</html>
+
+<!-- ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?
+Por qué así cersioramos que los datos que enviamos al servidor sonn los correctos y la información que será almacenada será de utilidad.
+¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?
+Tomando el valor desde el área local del usuario
+Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?
+Es buena práctica porque le da una mejor experienncia al ussuario y reducenn las cargas en los servidores (evitan errores comunes en estos).
+-->
