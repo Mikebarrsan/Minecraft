@@ -1,5 +1,13 @@
-const express = require('express')
+const express = require('express');
 const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -10,14 +18,16 @@ app.use((request, response, next) => {
   next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
-app.use('/construir', (request, response, next) => { //Lo específico debe ir antes de lo general
-  console.log(request.body);
-  response.send('Respuesta de la ruta "/construir"'); //Por ejemplo las respuestas o acciones de rutas específicas
-});
+//Registrar el middleware con el módulo construcciones
+const rutasConstrucciones = require('./routes/construcciones.routes');
+
+app.use('/', rutasConstrucciones);
 
 app.use((request, response, next) => {
-  console.log('Otro middleware!');
-  response.send('¡Hola mundo!'); //Manda la respuesta
+  response.status(404);
+  response.sendFile(
+    path.join(__dirname, 'views', '404.html')
+  );
 });
 
 app.listen(3000);
