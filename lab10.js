@@ -41,6 +41,12 @@ app.get('/amor', (request, response, next) => {
         <a class="navbar-item" href="/poema">
             Poema
         </a>
+        <a class="navbar-item" href="/tiempo">
+            Tiempo
+        </a>
+        <a class="navbar-item" href="/vida">
+            Vida
+        </a>
         </div>
 
         <div class="navbar-end">
@@ -117,6 +123,202 @@ app.post('/amor', (request, response, next) => {
     response.redirect('/');
 });
 
+app.get('/tiempo', (request, response, next) => {
+    response.send(`
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Poema de tiempo</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        </head>
+        <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item" href="/">
+                Home
+            </a>
+            <a class="navbar-item" href="/amor">
+                Amor
+            </a>
+            <a class="navbar-item" href="/poema">
+                Poema
+            </a>
+            <a class="navbar-item" href="/tiempo">
+                Tiempo
+            </a>
+            <a class="navbar-item" href="/vida">
+                Vida
+            </a>
+            </div>
+
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                <a class="button is-danger">
+                    <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                    Log in
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </nav>
+        <section class="hero is-info">
+            <div class="hero-body">
+                <p class="title">
+                Poema de tiempo
+                </p>
+                <p class="subtitle">
+                Por Dolores Veintimilla
+                </p>
+            </div>
+            </section>
+
+        <section class="section">
+            <div class="container">
+            <h1 class="title">
+                A UN RELOJ
+            </h1>
+            <p>
+                Con tu acompasado son
+                <br>Marcando vas inclemente
+                <br>De mi pobre corazón
+                <br>La violenta pulsación....
+                <br>Dichosa quien no te siente!
+                <br><br>Funesto, funesto bien
+                <br>Haces reloj....La venida
+                <br>Marcas del ser a la vida,
+                <br>Y así impasible también
+                <br>La hora de la partida.
+            </p>
+            </div>
+        </section>
+        </body>
+        <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            Editor implementado: 
+            <a href="https://code.visualstudio.com">Visual Studio Code</a>.
+            </p>
+        </div>
+        </footer>
+    </html>
+    `); 
+});
+
+app.post('/tiempo', (request, response, next) => {
+    console.log(request.body);
+    construcciones.push(request.body);
+    response.redirect('/');
+});
+
+app.get('/vida', (request, response, next) => {
+    response.send(`
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Poema de vida</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        </head>
+        <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item" href="/">
+                Home
+            </a>
+            <a class="navbar-item" href="/amor">
+                Amor
+            </a>
+            <a class="navbar-item" href="/poema">
+                Poema
+            </a>
+            <a class="navbar-item" href="/tiempo">
+                Tiempo
+            </a>
+            <a class="navbar-item" href="/vida">
+                Vida
+            </a>
+            </div>
+
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                <a class="button is-danger">
+                    <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                    Log in
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </nav>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <p class="title">
+                Poema de vida
+                </p>
+                <p class="subtitle">
+                Por Shawnee Kellie
+                </p>
+            </div>
+            </section>
+
+        <section class="section">
+            <div class="container">
+            <h1 class="title">
+                Uno
+            </h1>
+            <p>
+                Una sonrisa puede crear una amistad,
+                <br>Un apretón de manos puede elevar el alma;
+                <br>Una estrella puede guiar un barco al mar,
+                <br>Un vitoreo puede lograr un gol.
+                <br><br>Un voto puede cambiar una nación,
+                <br>Un rayo solar puede levantar una habitación,
+                <br>Una sola vela borra la oscuridad,
+                <br>Una carcajada conquista la tristeza.
+                <br><br>Una mirada puede cambiar dos vidas;
+                <br>Un beso puede hacer que el amor florezca
+                <br>Con un paso se inicia cada viaje;
+                <br>Con una palabra inicia cada orador;
+                <br><br>Una esperanza puede elevar nuestros espíritus,
+                <br>Un toque es capaz de mostrar que algo nos importa
+                <br>Una voz puede hablar con sabiduría
+                <br>Un corazón es capaz de saber la verdad.
+                <br><br>Una vida puede hacer la diferencia,
+                <br>Una vida somos tú y yo …
+            </p>
+            </div>
+        </section>
+        </body>
+        <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            Editor implementado: 
+            <a href="https://code.visualstudio.com">Visual Studio Code</a>.
+            </p>
+        </div>
+        </footer>
+    </html>
+    `); 
+});
+
+app.post('/tiempo', (request, response, next) => {
+    console.log(request.body);
+    construcciones.push(request.body);
+    response.redirect('/');
+});
+
 app.get('/poema', (request, response, next) => {
     response.send(`
     <!DOCTYPE html>
@@ -139,6 +341,12 @@ app.get('/poema', (request, response, next) => {
         </a>
         <a class="navbar-item" href="/poema">
             Poema
+        </a>
+        <a class="navbar-item" href="/tiempo">
+            Tiempo
+        </a>
+        <a class="navbar-item" href="/vida">
+            Vida
         </a>
         </div>
 
@@ -251,6 +459,12 @@ app.get('/', (request, response, next) => {
                     <a class="navbar-item" href="/poema">
                         Poema
                     </a>
+                    <a class="navbar-item" href="/tiempo">
+                        Tiempo
+                    </a>
+                    <a class="navbar-item" href="/vida">
+                        Vida
+                    </a>
                     </div>
                 
                     <div class="navbar-end">
@@ -311,6 +525,12 @@ app.use((request, response, next) => {
                 </a>
                 <a class="navbar-item" href="/poema">
                     Poema
+                </a>
+                <a class="navbar-item" href="/tiempo">
+                    Tiempo
+                </a>
+                <a class="navbar-item" href="/vida">
+                    Vida
                 </a>
                 </div>
             
