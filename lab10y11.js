@@ -12,12 +12,6 @@ const construcciones = [
     }
 ];
 
-//Middleware
-app.use((request, response, next) => {
-    console.log('Middleware!');
-    next(); //Le permite a la petición avanzar hacia el siguiente middleware
-});
-
 app.get('/amor', (request, response, next) => {
     response.send(`
     <!DOCTYPE html>
@@ -436,7 +430,6 @@ app.post('/poema', (request, response, next) => {
 });
 
 app.get('/', (request, response, next) => {
-    console.log('Ruta /');
     let html_respuesta = `
     <!DOCTYPE html>
     <html>
