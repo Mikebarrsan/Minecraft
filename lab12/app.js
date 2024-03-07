@@ -18,8 +18,10 @@ app.use((request, response, next) => {
 
 //Registrar el middleware con el módulo resenas
 const rutasResenas = require('./routes/resenas.routes');
-
 app.use('/', rutasResenas);
+
+const rutasMain = require('./routes/main.routes');
+app.use('/', rutasMain);
 
 app.use((request, response, next) => {
     response.status(404);
