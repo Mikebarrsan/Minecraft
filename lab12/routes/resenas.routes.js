@@ -8,6 +8,6 @@ router.get('/una-ruta', (request, response, next) => {
 
 router.get('/escriberesena', resenasController.get_escriberesena);
 router.post('/escriberesena', resenasController.post_escriberesena);
-router.get('/', resenasController.get_root);
+router.get('/consultaresena', resenasController.get_resena);
 
 module.exports = router;

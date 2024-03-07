@@ -9,12 +9,12 @@ exports.post_escriberesena = (request, response, next) => {
     const resena = 
     new Resena(request.body.nombre, request.body.descripcion);
     resena.save();
-    
+
     response.setHeader('Set-Cookie', 'ultima_resena=' + request.body.nombre + '; HttpOnly');;
-    response.redirect('/');
+    response.redirect('/consultaresena');
 };
 
-exports.get_root = (request, response, next) => {
+exports.get_resena = (request, response, next) => {
     console.log('Ruta /');
     let ultima_resena = request.get('Cookie');
     if (ultima_resena) {
