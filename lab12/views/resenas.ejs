@@ -1,0 +1,31 @@
+<%- include('includes/head.ejs') %>
+
+<h1 class="title">Reseñas:</h1>
+
+<div class="columns">
+
+    <% for (let resena of resenas) { %>
+
+    <div class="column">
+        <div class="card">
+
+            <div class="card-content">
+                <p class="subtitle">
+                    <%= resena.nombre %>
+                </p>
+                <p>
+                    <%= resena.descripcion %>
+                </p>
+            </div>
+            </div>
+        </div>
+    </div>
+        
+    <% } %>
+
+    <% if(ultima_resena != ''){ %>
+    <div>La última resena fue: <%= ultima_resena %>.</div>
+    <% } %>
+</div>        
+
+<%- include('includes/foot.ejs') %>

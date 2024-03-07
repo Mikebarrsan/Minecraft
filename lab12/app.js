@@ -12,21 +12,20 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
 //-----------------------------CAMBIOS----------------------------------
-//Middleware
 app.use((request, response, next) => {
-  next(); //Le permite a la petición avanzar hacia el siguiente middleware
+    next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
-//Registrar el middleware con el módulo construcciones
-const rutasConstrucciones = require('./routes/construcciones.routes');
+//Registrar el middleware con el módulo resenas
+const rutasResenas = require('./routes/resenas.routes');
 
-app.use('/', rutasConstrucciones);
+app.use('/', rutasResenas);
 
 app.use((request, response, next) => {
-  response.status(404);
-  response.sendFile(
-    path.join(__dirname, 'views', '404.html')
-  );
-});
+    response.status(404);
+    response.sendFile(
+      path.join(__dirname, 'views', '404.html')
+    );
+  });
 
-app.listen(3000);
+app.listen(1200);

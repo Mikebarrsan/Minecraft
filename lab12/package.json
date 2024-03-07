@@ -1,7 +1,7 @@
 {
   "name": "minecraft",
   "version": "1.0.0",
-  "description": "Proyecto compañero del curso TC2005B grupo 2",
+  "description": "Lab 12",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",

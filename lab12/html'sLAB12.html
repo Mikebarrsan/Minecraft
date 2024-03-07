@@ -1,105 +1,112 @@
-const express = require('express');
-const app = express();
-
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({extended: false}));
-
 app.get('/amor', (request, response, next) => {
     response.send(`
     <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>¿Qué es el amor?</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    </head>
-    <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-        <a class="navbar-item" href="/">
-            Home
-        </a>
-        <a class="navbar-item" href="/amor">
-            Amor
-        </a>
-        <a class="navbar-item" href="/poema">
-            Poema
-        </a>
-        <a class="navbar-item" href="/tiempo">
-            Tiempo
-        </a>
-        <a class="navbar-item" href="/vida">
-            Vida
-        </a>
-        </div>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>¿Qué es el amor?</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        </head>
+        <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item" href="/">
+                Home
+            </a>
+            <a class="navbar-item" href="/amor">
+                Amor
+            </a>
+            <a class="navbar-item" href="/poema">
+                Poema
+            </a>
+            <a class="navbar-item" href="/tiempo">
+                Tiempo
+            </a>
+            <a class="navbar-item" href="/vida">
+                Vida
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                        Reseñas
+                        </a>
+                
+                        <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/consultar-resenas">
+                            Consultar reseñas
+                        </a>
+                        <a class="navbar-item" href="/escribir-resena">
+                            Escribir reseña
+                        </a>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="navbar-end">
-        <div class="navbar-item">
-            <div class="buttons">
-            <a class="button is-danger">
-                <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-                Log in
-            </a>
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                <a class="button is-danger">
+                    <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                    Log in
+                </a>
+                </div>
+            </div>
             </div>
         </div>
-        </div>
-    </div>
-    </nav>
-    <section class="hero is-danger">
-        <div class="hero-body">
-            <p class="title">
-            ¿Qué es el amor?
+        </nav>
+        <section class="hero is-danger">
+            <div class="hero-body">
+                <p class="title">
+                ¿Qué es el amor?
+                </p>
+                <p class="subtitle">
+                Por Mike Barrón
+                </p>
+            </div>
+            </section>
+
+        <section class="section">
+            <div class="container">
+            <h1 class="title">
+                El <strong>amor</strong> es...
+            </h1>
+            <p>
+                <strong>Amor</strong> es pensar en un futuro juntos.
+                <br><strong>Amor</strong> es que mi niño interior se sienta seguro contigo.
+                <br><strong>Amor</strong> es ese brillo que provocas en mis ojos.
+                <br><strong>Amor</strong> es acompañarnos en momentos importantes, sean buenos o malos.
+                <br><strong>Amor</strong> es "ese no se qué" que me tiene "no se cómo" que me encanta "no se cuánto".
+                <br><strong>Amor</strong> es aceptarnos tal y como somos.
+                <br><strong>Amor</strong> es preocuparte y tomar interéspor el otro.
+                <br><strong>Amor</strong> es ver belleza en las imperfecciones del otro.
+                <br><strong>Amor</strong> es compartir momentos emotivos e inolvidables.
+                <br><strong>Amor</strong> es desearle lo mejor al otro aún cuando no podamos estar juntos.
+                <br><strong>Amor</strong> es sentir tu presencia y cariño a la distancia.
+                <br><strong>Amor</strong> es un viaje de descubrimiento y crecimiento mutuo.
+                <br><strong>Amor</strong> es Dios.
+                <br><strong>Amor</strong> es dedicar pequeños detalles.
+                <br><strong>Amor</strong> son actos desinteresados.
+                <br><strong>Amor</strong> son caricias gentiles.
+                <br><strong>Amor</strong> es comunicar los sentimientos.
             </p>
-            <p class="subtitle">
-            Por Mike Barrón
+
+            <p>
+                <br>El <strong>amor</strong> puede ser muchas cosas, pero nunca dejará de ser lo más importante en mi vida y mi familia.
             </p>
-        </div>
+            </div>
         </section>
-
-    <section class="section">
-        <div class="container">
-        <h1 class="title">
-            El <strong>amor</strong> es...
-        </h1>
-        <p>
-            <strong>Amor</strong> es pensar en un futuro juntos.
-            <br><strong>Amor</strong> es que mi niño interior se sienta seguro contigo.
-            <br><strong>Amor</strong> es ese brillo que provocas en mis ojos.
-            <br><strong>Amor</strong> es acompañarnos en momentos importantes, sean buenos o malos.
-            <br><strong>Amor</strong> es "ese no se qué" que me tiene "no se cómo" que me encanta "no se cuánto".
-            <br><strong>Amor</strong> es aceptarnos tal y como somos.
-            <br><strong>Amor</strong> es preocuparte y tomar interéspor el otro.
-            <br><strong>Amor</strong> es ver belleza en las imperfecciones del otro.
-            <br><strong>Amor</strong> es compartir momentos emotivos e inolvidables.
-            <br><strong>Amor</strong> es desearle lo mejor al otro aún cuando no podamos estar juntos.
-            <br><strong>Amor</strong> es sentir tu presencia y cariño a la distancia.
-            <br><strong>Amor</strong> es un viaje de descubrimiento y crecimiento mutuo.
-            <br><strong>Amor</strong> es Dios.
-            <br><strong>Amor</strong> es dedicar pequeños detalles.
-            <br><strong>Amor</strong> son actos desinteresados.
-            <br><strong>Amor</strong> son caricias gentiles.
-            <br><strong>Amor</strong> es comunicar los sentimientos.
-        </p>
-
-        <p>
-            <br>El <strong>amor</strong> puede ser muchas cosas, pero nunca dejará de ser lo más importante en mi vida y mi familia.
-        </p>
+        </body>
+        <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            Editor implementado: 
+            <a href="https://code.visualstudio.com">Visual Studio Code</a>.
+            </p>
         </div>
-    </section>
-    </body>
-    <footer class="footer">
-    <div class="content has-text-centered">
-        <p>
-        Editor implementado: 
-        <a href="https://code.visualstudio.com">Visual Studio Code</a>.
-        </p>
-    </div>
-    </footer>
+        </footer>
     </html>
     `); 
 });
@@ -138,6 +145,20 @@ app.get('/tiempo', (request, response, next) => {
             <a class="navbar-item" href="/vida">
                 Vida
             </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                    Reseñas
+                    </a>
+            
+                    <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/consultar-resenas">
+                        Consultar reseñas
+                    </a>
+                    <a class="navbar-item" href="/escribir-resena">
+                        Escribir reseña
+                    </a>
+                    </div>
+                </div>
             </div>
 
             <div class="navbar-end">
@@ -231,6 +252,20 @@ app.get('/vida', (request, response, next) => {
             <a class="navbar-item" href="/vida">
                 Vida
             </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                    Reseñas
+                    </a>
+            
+                    <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/consultar-resenas">
+                        Consultar reseñas
+                    </a>
+                    <a class="navbar-item" href="/escribir-resena">
+                        Escribir reseña
+                    </a>
+                    </div>
+                </div>
             </div>
 
             <div class="navbar-end">
@@ -332,6 +367,20 @@ app.get('/poema', (request, response, next) => {
         <a class="navbar-item" href="/vida">
             Vida
         </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                Reseñas
+                </a>
+        
+                <div class="navbar-dropdown">
+                <a class="navbar-item" href="/consultar-resenas">
+                    Consultar reseñas
+                </a>
+                <a class="navbar-item" href="/escribir-resena">
+                    Escribir reseña
+                </a>
+                </div>
+            </div>
         </div>
 
         <div class="navbar-end">
@@ -418,6 +467,185 @@ app.post('/poema', (request, response, next) => {
     response.redirect('/');
 });
 
+app.get('/escribir-resena', (request, response, next) => {
+    response.send(`
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>¿Qué es el amor?</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+        <a class="navbar-item" href="/">
+            Home
+        </a>
+        <a class="navbar-item" href="/amor">
+            Amor
+        </a>
+        <a class="navbar-item" href="/poema">
+            Poema
+        </a>
+        <a class="navbar-item" href="/tiempo">
+            Tiempo
+        </a>
+        <a class="navbar-item" href="/vida">
+            Vida
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                Reseñas
+                </a>
+        
+                <div class="navbar-dropdown">
+                <a class="navbar-item" href="/consultar-resenas">
+                    Consultar reseñas
+                </a>
+                <a class="navbar-item" href="/escribir-resena">
+                    Escribir reseña
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+            <a class="button is-danger">
+                <strong>Sign up</strong>
+            </a>
+            <a class="button is-light">
+                Log in
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Agregar una reseña</h1>
+            <form action="/resena" method="POST">
+            <label class="label" for="nombre">Nombre</label>
+            <input name="nombre" id="nombre" type="text" class="input"><br>
+            <label class="label" for="descripcion">Descripcion</label>
+            <input name="descripcion" id="descripcion" type="text" class="input"><br><br>
+            <input class="button is-success" type="submit" value="Resena">
+            </form>
+        </div>
+    </section>
+    </body>
+    <footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+        Editor implementado: 
+        <a href="https://code.visualstudio.com">Visual Studio Code</a>.
+        </p>
+    </div>
+    </footer>
+    </html>
+    `); 
+});
+
+app.post('/escribir-resena', (request, response, next) => {
+    console.log(request.body);
+    response.redirect('/');
+});
+
+app.get('/consultar-resenas', (request, response, next) => {
+    response.send(`
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>¿Qué es el amor?</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+        <a class="navbar-item" href="/">
+            Home
+        </a>
+        <a class="navbar-item" href="/amor">
+            Amor
+        </a>
+        <a class="navbar-item" href="/poema">
+            Poema
+        </a>
+        <a class="navbar-item" href="/tiempo">
+            Tiempo
+        </a>
+        <a class="navbar-item" href="/vida">
+            Vida
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                Reseñas
+                </a>
+        
+                <div class="navbar-dropdown">
+                <a class="navbar-item" href="/consultar-resenas">
+                    Consultar reseñas
+                </a>
+                <a class="navbar-item" href="/escribir-resena">
+                    Escribir reseña
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+            <a class="button is-danger">
+                <strong>Sign up</strong>
+            </a>
+            <a class="button is-light">
+                Log in
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+        <h1 class="title">
+            Consultar reseña:
+        </h1>
+        <p>
+            Párrafo
+        </p>
+        </div>
+    </section>
+    </body>
+    <footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+        Editor implementado: 
+        <a href="https://code.visualstudio.com">Visual Studio Code</a>.
+        </p>
+    </div>
+    </footer>
+    </html>
+    `); 
+});
+
+app.post('/consultar-resenas', (request, response, next) => {
+    console.log(request.body);
+    resenas.push(request.body);
+    response.redirect('/');
+});
+
 app.get('/', (request, response, next) => {
     let html_respuesta = `
     <!DOCTYPE html>
@@ -447,6 +675,22 @@ app.get('/', (request, response, next) => {
                     <a class="navbar-item" href="/vida">
                         Vida
                     </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Reseñas
+                    </a>
+                
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/consultar-resenas">
+                            Consultar reseñas
+                        </a>
+                        <a class="navbar-item" href="/escribir-resena">
+                            Escribir reseña
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
                     </div>
                 
                     <div class="navbar-end">
@@ -514,6 +758,20 @@ app.use((request, response, next) => {
                 <a class="navbar-item" href="/vida">
                     Vida
                 </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    Reseñas
+                </a>
+            
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/consultar-resenas">
+                        Consultar reseñas
+                    </a>
+                    <a class="navbar-item" href="/escribir-resena">
+                        Escribir reseña
+                    </a>
+                </div>
+                </div>
                 </div>
             
                 <div class="navbar-end">
@@ -547,5 +805,3 @@ app.use((request, response, next) => {
     </html>
     `);
 });
-
-app.listen(1011);
