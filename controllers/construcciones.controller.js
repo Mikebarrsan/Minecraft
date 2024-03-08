@@ -17,7 +17,6 @@ exports.post_construir = (request, response, next) => {
             response.redirect('/');
         })
         .catch((error) => {console.log(error)});
-
 };
 
 exports.get_root = (request, response, next) => {

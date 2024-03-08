@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-03-2024 a las 17:02:09
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 08-03-2024 a las 18:13:05
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,71 +18,61 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `minecraft`
+-- Base de datos: `poems`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `construccion`
+-- Estructura de tabla para la tabla `resena`
 --
 
-CREATE TABLE `construccion` (
+CREATE TABLE `resena` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `imagen` varchar(400) NOT NULL,
+  `descripcion` varchar(400) NOT NULL,
   `username` varchar(30) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `usuario`
+-- Volcado de datos para la tabla `resena`
 --
 
-CREATE TABLE `usuario` (
-  `username` varchar(30) NOT NULL,
-  `password` varchar(400) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+INSERT INTO `resena` (`id`, `nombre`, `descripcion`, `username`, `created_at`) VALUES
+(1, 'Mike Barrón', 'Que bonita página', 'ultramikebarsa', '2024-03-08 17:12:17'),
+(2, 'Margarita', '¡Que bonitos poemas!', 'ultramikebarsa', '2024-03-08 17:12:17');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `construccion`
+-- Indices de la tabla `resena`
 --
-ALTER TABLE `construccion`
+ALTER TABLE `resena`
   ADD PRIMARY KEY (`id`),
   ADD KEY `username` (`username`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `construccion`
+-- AUTO_INCREMENT de la tabla `resena`
 --
-ALTER TABLE `construccion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `resena`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `construccion`
+-- Filtros para la tabla `resena`
 --
-ALTER TABLE `construccion`
-  ADD CONSTRAINT `fk_usuarios` FOREIGN KEY (`username`) REFERENCES `usuario` (`username`);
+ALTER TABLE `resena`
+  ADD CONSTRAINT `username` FOREIGN KEY (`username`) REFERENCES `usuario` (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,9 +1,4 @@
-const resenas = [
-    {
-        nombre: "Mike Barrón", 
-        descripcion: "¡Que bonitos poemas!",
-    }
-];
+const db = require('../util/database');
 
 module.exports = class Modelo {
 
@@ -15,15 +10,16 @@ module.exports = class Modelo {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        resenas.push({
-            nombre: this.nombre,
-            descripcion: this.descripcion
-        });//es lo mismo que resenas.push(this)
+        return db.execute(
+            'INSERT INTO resena (nombre, imagen, username) VALUES (?, ?, "ultramikebarsa")',
+            [this.nombre, this.descripcion]
+        );
     }
+
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return resenas;
+        return db.execute('SELECT * FROM resena');
     }
 
-};
+}

@@ -1,4 +1,4 @@
-<%- include('includes/head.ejs') %>
+<%- include('includes/head.ejs', {username: username}) %>
                 <h1 class="title">Agregar una reseña</h1>
                 <form action="/escriberesena" method="POST">
                     <label class="label" for="nombre">Nombre</label>
