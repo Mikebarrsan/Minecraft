@@ -9,7 +9,7 @@
     <body>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-            <a class="navbar-item" href="/">
+            <a class="navbar-item" href="/construcciones">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT27Ahugh_giimXgC5jzZNAIdsZGxqjA-bvxw-4gRbBfF8evxX2rYwG4eI_fRiurOTiZ_c&usqp=CAU" width="112" height="28">
             </a>
         
@@ -22,11 +22,11 @@
         
             <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
-                Home
+                <a class="navbar-item" href="construcciones">
+                Construcciones
                 </a>
         
-                <a class="navbar-item" href="/construir">
+                <a class="navbar-item" href="/construcciones/construir">
                 Construir
                 </a>
         
@@ -56,12 +56,21 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-primary">
-                    <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                    Log in
-                    </a>
+                    <% if (username == '') { %> 
+                        <a class="button is-primary" hreaf ="/signup">
+                            <strong>Registrarse</strong>
+                        </a>
+                        <a href="/users/login" class="button is-light">
+                            Entrar
+                        </a>
+                    <% } else { %>
+                        <span>
+                            Hola <strong><%= username %> | </strong> 
+                        </span>
+                        <a href="/users/logout" class="button is-danger">
+                            Salir
+                        </a>
+                    <% } %>
                 </div>
                 </div>
             </div>

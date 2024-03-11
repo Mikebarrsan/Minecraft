@@ -29,7 +29,7 @@ const rutasUsuarios = require('./routes/usuarios.routes');
 app.use('/users', rutasUsuarios);
 
 const rutasConstrucciones = require('./routes/construcciones.routes');
-app.use('/', rutasConstrucciones);
+app.use('/construcciones', rutasConstrucciones);
 
 app.use((request, response, next) => {
   response.status(404);

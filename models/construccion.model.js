@@ -21,4 +21,17 @@ module.exports = class Construccion {
         return db.execute('SELECT * FROM construccion');
     }
 
+    static fetchOne(id){
+        return db.execute('SELECT * FROM construccion WHERE id=?', 
+            [id]);
+    }
+
+    static fetch(id) {
+        if (id) {
+            return this.fetchOne(id);
+        } else {
+            return this.fetchAll();
+        }
+    }
+
 }
