@@ -11,7 +11,7 @@ module.exports = class Modelo {
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
         return db.execute(
-            'INSERT INTO resena (nombre, imagen, username) VALUES (?, ?, "ultramikebarsa")',
+            'INSERT INTO resena (nombre, descripcion, username) VALUES (?, ?, "ultramikebarsa")',
             [this.nombre, this.descripcion]
         );
     }
