@@ -17,12 +17,25 @@ module.exports = class Usuario {
                 [this.username, password_cifrado]
                 );
             })
-            .catch((error) => console.log(error)); 
+            .catch((error) => {
+                console.log(error);
+                throw Error('Nombre de usuario duplicado: Ya existe un usuario con ese nombre');
+            }); 
     }
 
     static fetchOne(username, password) {
         return db.execute(
             'SELECT * FROM usuario WHERE username=?', 
+            [username]);
+    }
+
+    static getPermisos(username) {
+        return db.execute(
+            `SELECT funcion 
+            FROM usuario u, asigna a, rol r, posee p, permiso per
+            WHERE u.username = ? AND u.username = a.username
+            AND a.idrol = r.id AND r.id = p.idrol 
+            AND p.idpermiso = per.id`, 
             [username]);
     }
 

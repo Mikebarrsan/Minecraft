@@ -18,7 +18,7 @@ module.exports = class Modelo {
 
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
-    static fetchAll() {
+    static fetch() {
         return db.execute('SELECT * FROM resena');
     }
 

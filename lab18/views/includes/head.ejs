@@ -25,19 +25,24 @@
             Vida
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-            Reseñas
-        </a>
-    
+            <a class="navbar-link">
+                Reseñas
+            </a>
         <div class="navbar-dropdown">
-            <a class="navbar-item" href="/consultaresena">
-                Consultar reseñas
-            </a>
-            <a class="navbar-item" href="/escriberesena">
-                Escribir reseña
-            </a>
+        <% for (let funcion of permisos) { %>
+            <% if (funcion.funcion == 'ver') { %>
+                <a class="navbar-item" href="/consultaresena">
+                    Consultar reseñas
+                </a>
+            <% } %>
+            <% if (funcion.funcion == 'escribir') { %>
+                <a class="navbar-item" href="/escriberesena">
+                    Escribir reseña
+                </a>
+            <% } %> 
+        <% } %>
         </div>
-        </div>
+        </div> 
         </div>
     
         <div class="navbar-end">

@@ -3,6 +3,8 @@ const Resena = require('../models/resena.model');
 exports.get_escriberesena = (request, response, next) => {
     response.render('escriberesena', {
         username: request.session.username || '',
+        csrfToken: request.csrfToken(),
+        permisos: request.session.permisos || [],
     }); 
 };
 
@@ -29,12 +31,13 @@ exports.get_resena = (request, response, next) => {
     }
     console.log(ultima_resena);
     
-    Resena.fetchAll().then(([rows, fieldData]) => {
+    Resena.fetch(request.params.resena_id).then(([rows, fieldData]) => {
         console.log(rows);
         response.render('resenas', {
             resenas: rows,
             ultima_resena: ultima_resena,
             username: request.session.username || '',
+            permisos: request.session.permisos || [],
         });
     })
     .catch((error) => {
